@@ -7,6 +7,7 @@ import imag2 from "../../assets/img/logom1.png"
 import Container from '@material-ui/core/Container/Container.js'
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import Instr from '../../Components/WelcomeGame/PlayInstructions.js'
+import ProfileTab from '../../Components/Profile_/ProfileTab.js'
 
 export default function Components() {
   const matches = useMediaQuery('(min-width : 1300px)');
@@ -22,6 +23,7 @@ export default function Components() {
           <Container>
             <Header/>
             <Parallax image={imag2} />
+            <ProfileTab />
             <Intro />
             <Instr />
             
