@@ -5,9 +5,9 @@ import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import AnotherMl from 'C:/NewReactResume/resm/src/Components/FirstML/AnotherMl.js'
-import LineGraph from 'C:/NewReactResume/resm/src/Components/ChartJs/Charts.js'
-import DataS from 'C:/NewReactResume/resm/src/Components/DataSet/DataS.js'
+import AnotherMl from '../FirstML/AnotherMl.js'
+//import LineGraph from 'C:/NewReactResume/resm/src/Components/ChartJs/Charts.js'
+//import DataS from 'C:/NewReactResume/resm/src/Components/DataSet/DataS.js'
 import Gist from 'react-gist'
 import Box from '@material-ui/core/Box'
 //import Toxicity1 from '../../Components/FirstML/Toxic.js'
