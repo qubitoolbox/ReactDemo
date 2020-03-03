@@ -6,7 +6,6 @@ import {makeStyles} from '@material-ui/core/styles'
 import CardHeader from '@material-ui/core/CardHeader';
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent';
-import aPic from 'C:/NewReactResume/resm/src/assets/img/indicator.gif'
 //import Play from '../../Components/PlayGround/PlayGround.js'
 import Graphing from '../../Components/Graphs/Graphing.js'
 import CustomLinearProgress from '../../Components/LinearProgress/LinearProgress.js'
