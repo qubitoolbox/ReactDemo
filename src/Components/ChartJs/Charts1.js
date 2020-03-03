@@ -3,7 +3,7 @@ import Chart from "chart.js";
 import { makeStyles } from '@material-ui/core/styles';
 import classes from "../../assets/css/LineGraph.module.css";
 import Grid from '@material-ui/core/Grid';
-import {adata} from 'C:/NewReactResume/resm/src/Components/FirstML/AnotherMl.js';
+import {adata} from '../FirstML/AnotherMl.js';
 
 
 
