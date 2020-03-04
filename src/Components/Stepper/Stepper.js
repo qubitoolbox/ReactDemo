@@ -10,8 +10,9 @@ import AnotherMl from '../FirstML/AnotherMl.js'
 //import DataS from 'C:/NewReactResume/resm/src/Components/DataSet/DataS.js'
 import Gist from 'react-gist'
 import Box from '@material-ui/core/Box'
+import Switch from '@material-ui/core/Switch'
 //import Toxicity1 from '../../Components/FirstML/Toxic.js'
-//import Play from '../../Components/PlayGround/PlayGround.js'
+import Play from '../../Components/PlayGround/PlayGround.js'
 const useStyles = makeStyles(theme => ({
   root: {
     width: '100%',
@@ -54,6 +55,8 @@ function getStepContent(step) {
       </div>)
     case 2:
       return (<div>
+        
+        <Play />
        
     </div>);
     default:

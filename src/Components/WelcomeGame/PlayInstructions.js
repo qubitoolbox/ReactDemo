@@ -33,7 +33,7 @@ export default function Instr(){
                         <Typography>
                 
                 All you have to do is press next below. And the model will begin
-                training. Once finished, it will Display the results of the pre-configures
+                training. Once finished, it will Display the results of the pre-configured
                 model..
                 
                 

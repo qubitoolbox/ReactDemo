@@ -43,13 +43,13 @@ export default function ProfileTab(props) {
                 <h3>
                 I love the thought of coding. I am passionate with Data. I consume 
                 the language of mathematics and passionate about the thought of qubits.
-                I reminisce in code and dream in Code...
+                I reminisce in code and dream in Code..
                 </h3>
               </Typography>
               <Typography >
                 <h3>
                 Below I show a brief summary of the concepts I am knowledgeable about, followed
-                by a quick demo of how ML trains and predicts random data.
+                by a quick demo of how ML trains and predicts from random data.
                 </h3>
               </Typography>
             </div>

@@ -18,6 +18,7 @@ import FilledInput from '@material-ui/core/FilledInput'
 import Checkbox from '@material-ui/core/Checkbox'
 import customInputStyle from "../../assets/jss/material-kit-react/components/customInputStyle.js"
 
+//import {Slider} from 'react-native';
 
 const anotherStyle = makeStyles(customInputStyle)
 const useStyles = makeStyles(theme => ({
@@ -47,7 +48,7 @@ export default class Play extends React.Component{
     super(props);
     this.inputField = React.createRef()
     this.state = {
-      eta: null,
+      eta: 50,
       dout: null,
       momemtum: null,
       epoch: null,
@@ -61,16 +62,19 @@ export default class Play extends React.Component{
       shapeY: null,
     };
     
-    this.publish = this.publish.bind(this);
-    this.handleChange = this.handleChange.bind(this);
+    //this.publish = this.publish.bind(this);
+    //this.handleChange = this.handleChange.bind(this);
     }
 
-    handleChange({ target }) {
-      this.setState({
-        [target.name]: target.value
+    handleChange(value) {
+      this.setState(()=>{
+        return {
+          eta: parseFloat(value),
+        }
       });
 
       //dat = this.state.target.value
+      this.publish()
     }
   
     publish() {
@@ -79,6 +83,7 @@ export default class Play extends React.Component{
     }
 
       render(){
+        const {eta} = this.state
         return (
             <div>
                 <Container display="flex" >
@@ -88,7 +93,7 @@ export default class Play extends React.Component{
                        <Grid item md={4} >
                          <Container>
                        <h4>Learning Rate</h4>
-                           <Slider/>
+                           <Slider step={0.00003} valueLabelDisplay={"auto"} onValueChange={this.handleChange.bind(this)} value={eta}/>
                       <Box fontSize={26}>Dropout</Box> 
                             
                             <Toggle disabled={false}>  
@@ -165,7 +170,6 @@ export default class Play extends React.Component{
                         </Container>
                         </Grid>
                     </Grid>
-
                     <Checkbox/>
                 </Container>
             </div>
