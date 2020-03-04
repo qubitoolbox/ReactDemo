@@ -39,7 +39,7 @@ export default function Instr(){
                 
                 </Typography>
                 <Typography>
-                Additionally, two Charts will be diplayed depicting accuracy and
+                Additionally, two Charts will be displayed depicting accuracy and
                 gradient descent of the once trained model.
 
                 </Typography>
@@ -52,7 +52,7 @@ export default function Instr(){
                         <Typography>
                     
                         <b>Disclaimer: </b> <i>Due to heaviness in performance nature of
-                    training an ML model, I have limited the mode to 100 iterations
+                    training an ML model, I have limited the model to 100 iterations
                     of batch size 10.. Only for model purposes.
                     </i>
                 </Typography>
