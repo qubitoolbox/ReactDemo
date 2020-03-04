@@ -176,7 +176,7 @@ export default class AnotherMl extends React.Component{
             }
         this.randomm()
         
-        //console.log(model.getWeights().toString())
+        console.log(model.summary.toString())
         
     }
 
