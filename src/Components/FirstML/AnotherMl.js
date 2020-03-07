@@ -11,7 +11,7 @@ import Graphing from '../../Components/Graphs/Graphing.js'
 import CustomLinearProgress from '../../Components/LinearProgress/LinearProgress.js'
 export var theindata
 
-export var adata = {data:[0], loss: [0], flagtrain: false, labelsdata:[], labelsdata1:[]}
+export var adata = {data:[0], loss: [0], flagtrain: false, labelsdata:[], labelsdata1:[],weights:[]}
 
 export var thelabels;
 
@@ -80,6 +80,7 @@ export default class AnotherMl extends React.Component{
             measure1:null,
             datasets : null, 
             counter : 0,
+            weights :[],
             prediction:null
         }  
 
@@ -103,7 +104,7 @@ export default class AnotherMl extends React.Component{
         this.setState({y:labels.toString()})
         this.setState({isitraining:true})
         let counter = 0;
-        
+
         var i = 1
         var flag = false
         var index = 0
@@ -117,23 +118,36 @@ export default class AnotherMl extends React.Component{
             for (i ; !flag; )
             {
                 if (!adata.data[1] && !adata.loss){
+
+                    //let j = "x";
+                    //let k = "y";
+
+
                     adata.data[1] = parseFloat(logs.acc)
                     adata.loss[1] = parseFloat(logs.loss)
                     adata.labelsdata[1] =  i
                     adata.labelsdata1[1] = i
+                    adata.weights[i] = {j:i,k:parseFloat(model.getWeights(i).toString())}
+                    //console.log(adata.weights[i])
                 }
                 else if (!adata.data[i] && !adata.loss[i]){
                     
+                    //let j = "x";
+                    //let k = "y";
                     adata.data[i] = parseFloat(logs.acc)
                     adata.loss[i] = parseFloat(logs.loss)
                     adata.labelsdata[i] =  i
                     adata.labelsdata1[i] = i
+                    //adata.weights[i] = {j:i,k:parseFloat(model.getWeights(i).toString())}
+                    //console.log(adata.weights[i])
                 }else
                 {
-                    
+                    //let j = "x";
+                    //let k = "y";
                     adata.data[i+1] = parseFloat(logs.acc)
                     adata.loss[i+1] = parseFloat(logs.loss)
                     adata.labelsdata1[i+1] =  i
+                    //adata.weights[i] = {j:i,k:parseFloat(model.getWeights(i).toString())};
                 }
                 i += 1
                 
@@ -176,7 +190,7 @@ export default class AnotherMl extends React.Component{
             }
         this.randomm()
         
-        console.log(model.summary.toString())
+        console.log(model.summary())
         
     }
 
@@ -279,7 +293,7 @@ export default class AnotherMl extends React.Component{
                             />
                         <CardContent>
                             
-                            {this.state.trained?<p>{model.getWeights().toString()}</p>:<div><p>Loading</p><CustomLinearProgress /></div>}
+                            {this.state.trained?<p>{model.getWeights(0).toString()}</p>:<div><p>Loading</p><CustomLinearProgress /></div>}
                         </CardContent>
                     </Card>
                 </Grid>
