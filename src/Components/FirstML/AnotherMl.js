@@ -18,7 +18,7 @@ export var thelabels;
 const model = tf.sequential({
     layers: [
       tf.layers.dense({inputShape: [4], units: 4, activation: 'relu'}),
-      tf.layers.dense({units:25, activation:'relu'}),
+      tf.layers.dense({units:128, activation:'relu6'}),
       //tf.layers.dense({units:10, activation:'relu'}),
       tf.layers.dense({units: 4, activation: 'relu'}),
     ]
@@ -54,10 +54,10 @@ const useStyles = makeStyles(theme => ({
   }));
 
   model.compile({
-    optimizer: 'adam',
-    learningrate: 0.003,
-    dropout: 0.3,
-    loss: 'categoricalCrossentropy',
+    optimizer: 'Adadelta',
+    learningrate: 0.0003,
+    dropout: 0.1,
+    loss: 'meanSquaredError',
     metrics: ['accuracy']
   });
 export var state;
@@ -165,7 +165,7 @@ export default class AnotherMl extends React.Component{
 
         
         model.fit(data_, labels, {
-        epochs: 15, 
+        epochs: 30, 
         batchSize: 10,
         callbacks: {onBatchEnd}
         }).then(info => {
@@ -183,8 +183,10 @@ export default class AnotherMl extends React.Component{
     async thePrediction(){
 
         if(this.state.trained)
-            {
-                prediction_ = await model.predict(tf.randomNormal([10, 4]));
+            {   
+                let testdata = tf.randomNormal([10, 4])
+                console.log(testdata.toFloat())
+                prediction_ = await model.predict(testdata);
                 this.setState({prediction: prediction_.toString(prediction_.print())})
               
             }
@@ -293,7 +295,7 @@ export default class AnotherMl extends React.Component{
                             />
                         <CardContent>
                             
-                            {this.state.trained?<p>{model.getWeights(0).toString()}</p>:<div><p>Loading</p><CustomLinearProgress /></div>}
+                            {this.state.trained?<p>{model.getWeights().toString()}</p>:<div><p>Loading</p><CustomLinearProgress /></div>}
                         </CardContent>
                     </Card>
                 </Grid>
