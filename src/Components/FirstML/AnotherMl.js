@@ -17,7 +17,7 @@ export var thelabels;
 
 const model = tf.sequential({
     layers: [
-      tf.layers.dense({inputShape: [4], units: 4, activation: 'relu'}),
+      tf.layers.dense({inputShape: [4], units: 4, activation: 'relu6'}),
       tf.layers.dense({units:128, activation:'relu6'}),
       //tf.layers.dense({units:10, activation:'relu'}),
       tf.layers.dense({units: 4, activation: 'relu'}),
@@ -54,7 +54,7 @@ const useStyles = makeStyles(theme => ({
   }));
 
   model.compile({
-    optimizer: 'Adadelta',
+    optimizer: 'adam',//Adadelta outperforms
     learningrate: 0.0003,
     dropout: 0.1,
     loss: 'meanSquaredError',
@@ -185,7 +185,7 @@ export default class AnotherMl extends React.Component{
         if(this.state.trained)
             {   
                 let testdata = tf.randomNormal([10, 4])
-                console.log(testdata.toFloat())
+                testdata.array().then(array => console.log(array))
                 prediction_ = await model.predict(testdata);
                 this.setState({prediction: prediction_.toString(prediction_.print())})
               
