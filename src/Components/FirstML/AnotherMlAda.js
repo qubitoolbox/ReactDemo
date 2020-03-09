@@ -54,16 +54,16 @@ const useStyles = makeStyles(theme => ({
   }));
 
   model.compile({
-    optimizer: 'Adagrad',//Adadelta outperforms
+    optimizer: 'Adam',//Adadelta outperforms
     learningrate: 0.0003,
     momemtum: 0.000003,
-    dropout: 0.1200002,
+    dropout: 0.1,
     loss: 'meanSquaredError',
     metrics: ['accuracy']
   });
 export var state;
 
-export default class AnotherMl extends React.Component{
+export default class AnotherMlAdam extends React.Component{
     
     constructor(props) {
 

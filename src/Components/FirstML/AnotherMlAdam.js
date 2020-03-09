@@ -54,10 +54,9 @@ const useStyles = makeStyles(theme => ({
   }));
 
   model.compile({
-    optimizer: 'Adagrad',//Adadelta outperforms
+    optimizer: 'Adadelta',//Adadelta outperforms
     learningrate: 0.0003,
-    momemtum: 0.000003,
-    dropout: 0.1200002,
+    dropout: 0.1,
     loss: 'meanSquaredError',
     metrics: ['accuracy']
   });

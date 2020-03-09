@@ -6,6 +6,8 @@ import StepLabel from '@material-ui/core/StepLabel';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import AnotherMl from '../FirstML/AnotherMl.js'
+import AnotherMlAdam from '../FirstML/AnotherMlAda.js'
+import AnotherMlAdadelta from '../FirstML/AnotherMlAdadelta.js'
 //import LineGraph from 'C:/NewReactResume/resm/src/Components/ChartJs/Charts.js'
 //import DataS from 'C:/NewReactResume/resm/src/Components/DataSet/DataS.js'
 import Gist from 'react-gist'
@@ -33,7 +35,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 function getSteps() {
-  return ['Train an ML Model','ML Model View', 'Null', 'Null'];
+  return ['Train an ML Model','Adagrad', 'Adam', 'Adadelta'];
 }
 
 function getStepContent(step) {
@@ -55,10 +57,12 @@ function getStepContent(step) {
       </div>)
     case 2:
       return (<div>
-       
+          <AnotherMlAdam />
     </div>);
     default:
-      return 'Unknown step';
+      return (<div>
+        <AnotherMlAdadelta />
+  </div>);
   }
 }
 

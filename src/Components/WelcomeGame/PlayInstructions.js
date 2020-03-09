@@ -8,6 +8,10 @@ import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
 import Divider from '@material-ui/core/Divider'
 import Button from '@material-ui/core/Button'
+import { Grid } from '@material-ui/core'
+import GridItem from '../Grid/GridItem'
+import Gist from 'react-gist'
+import Box from '@material-ui/core/Box'
 
 export default function Instr(){
 
@@ -34,7 +38,7 @@ export default function Instr(){
                 
                 All you have to do is press next below. And the model will begin
                 training. Once finished, it will Display the results of the pre-configured
-                model..
+                model. .
                 
                 
                 </Typography>
@@ -43,6 +47,15 @@ export default function Instr(){
                 gradient descent of the once trained model.
 
                 </Typography>
+                <Typography>
+                    Lastly, I compare three different models with respect to their error
+                    rate. The parameters are as follow:
+                </Typography>
+                <Grid>
+                    <GridItem column="md-2"  >
+                            <Gist id='0cc51698aae592771e9e37647b30ab1d'/>
+                    </GridItem>
+                </Grid>
                         </ListItemText>
                     </ListItem>
                 </ListItemAvatar>
@@ -58,7 +71,7 @@ export default function Instr(){
                 </Typography>
 
                 <Typography>
-                    Happy <i>Training</i>!
+                    See the error differences for yourself. Happy <i>Training</i>!
                 </Typography>
                         </ListItemText>
                     </ListItem>
