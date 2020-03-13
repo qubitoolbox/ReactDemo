@@ -57,6 +57,7 @@ const useStyles = makeStyles(theme => ({
     optimizer: 'Adagrad',//Adadelta outperforms
     learningrate: 0.0003,
     momemtum: 0.000003,
+    l1_regularization_strength: 0.00000000002,
     dropout: 0.1200002,
     loss: 'meanSquaredError',
     metrics: ['accuracy']
