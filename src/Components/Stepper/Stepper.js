@@ -122,7 +122,7 @@ export default function HorizontalLinearStepper() {
           const stepProps = {};
           const labelProps = {};
           if (isStepOptional(index)) {
-            labelProps.optional = <Typography variant="caption">press f12 for more details</Typography>;
+            labelProps.optional = <Typography variant="caption">press f12/console for more details</Typography>;
           }
           if (isStepSkipped(index)) {
             stepProps.completed = false;
