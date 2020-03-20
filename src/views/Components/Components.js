@@ -8,6 +8,7 @@ import Container from '@material-ui/core/Container/Container.js'
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import Instr from '../../Components/WelcomeGame/PlayInstructions.js'
 import ProfileTab from '../../Components/Profile_/ProfileTab.js'
+import Maint from '../../Components/Maint/maint.js'
 
 export default function Components() {
   const matches = useMediaQuery('(min-width : 1300px)');
@@ -19,7 +20,10 @@ export default function Components() {
       {
         matches
       ?
+      <div></div>
+      /*
       <div>
+        
           <Container>
             <Header/>
             <Parallax image={imag2} />
@@ -32,14 +36,17 @@ export default function Components() {
           </Container>
           
           </div>
+          */
           
         :
+        <div><Maint/></div>
+        /*
           <div>
           <h1>
             Sorry, Page only Viewable on Desktops/Laptops
             Tablets, need be flipped.
           </h1>
-          </div>
+          </div>*/
           }
     </span>
   );
