@@ -19,6 +19,9 @@ const useStyles = makeStyles(theme => ({
         display: "flex",
         alignItems: "center"
     }
+    ,thefont:{
+        fontSize: "28px"
+    }
     
     
   }));
@@ -27,8 +30,8 @@ const useStyles = makeStyles(theme => ({
 export default function Maint(){
 const classes = useStyles()
     return(<div >
-        <Box >
-            <Typography>This page is under construction</Typography>
+        <Box className={classes.bgaColor}>
+            <Typography className={classes.thefont}>This page is under construction</Typography>
             
         </Box>
 
